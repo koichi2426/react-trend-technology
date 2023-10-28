@@ -5,7 +5,7 @@ import openai
 import git
 import os
 
-query = "chatgpt"
+query = "React"#検索キーワードの設定
 params = {"q": query, "sort": "stars", "order": "desc","per_page": 20}#人気順トップ20のリポジトリを取得
 URL = "https://api.github.com/search/repositories"
 response = requests.get(URL, params=params)
@@ -14,10 +14,8 @@ data = json.loads(response.text)
 
 
 #2.必要な情報を見つけ出すテキスト分類
-openai.api_key = "APIkey"
+openai.api_key = "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"
 model = "gpt-3.5-turbo"
-
-target_word = "ChatGPT"#注目したい技術
 
 def related_decisions(word):
     prompt = """
@@ -49,7 +47,7 @@ items = data["items"]
 # 書き込み用にファイルを開く（ファイルが存在しない場合は作成します）
 with open("./AwesomeRepositories/README.md", "w", encoding="utf-8") as readme_file:
     # ヘッダーを書き込む
-    readme_file.write("# trend technology\n\n今日のトレンド技術トップ20\n\nこのREADME.mdは定期実行により、毎日7時に更新されます。トレンド技術トップ20をお届けします。\n\n")
+    readme_file.write("# react trend news\n\n今日のreactトレンドトップ20\n\nこのランキングは毎日5時に更新されます。トレンドトップ20をお届けします。\n\n")
     top = 1
     # リポジトリのアイテムをループ処理
     for item in items:
