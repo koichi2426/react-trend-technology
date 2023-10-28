@@ -14,7 +14,7 @@ data = json.loads(response.text)
 
 
 #2.必要な情報を見つけ出すテキスト分類
-openai.api_key = "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"
+openai.api_key = "APIkey"
 model = "gpt-3.5-turbo"
 
 def related_decisions(word):
