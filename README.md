@@ -1,4 +1,4 @@
-# trend technology
+# react trend technology
 
 ## 作品概要
 毎朝5時頃にreactのトレンドトップ20を紹介するリポジトリ。毎朝5時に自動で更新されます。
